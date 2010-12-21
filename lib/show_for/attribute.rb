@@ -12,6 +12,10 @@ module ShowFor
         @object.send(attribute_name)
       end
 
+      if options[:using]
+        value = options[:using].call(value)
+      end 
+      
       wrap_label_and_content(attribute_name, value, options, &collection_block)
     end
 
