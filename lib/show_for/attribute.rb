@@ -13,7 +13,7 @@ module ShowFor
       end
 
       if options[:using]
-        value = options[:using].call(value)
+        value = options[:using].call(@object)
       end 
       
       wrap_label_and_content(attribute_name, value, options, &collection_block)
